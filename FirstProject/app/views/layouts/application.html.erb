@@ -7,14 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>CuteRoulette!</h1>
 
-<% if user_signed_in? %>
-  <%= link_to current_user.email, user_path(current_user)  %>
-  <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
-<% else %>
-  <%= link_to "sign in", new_user_session_path %> | <%= link_to "sign up", new_user_registration_path %>
-<% end %>
+<nav class="navbar navbar-default" role="navigation">
+
+  <h1><a class="navbar-brand" href="/pictures">CuteRoulette!</a></h1>
+
+  <% if user_signed_in? %>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to current_user.email, user_path(current_user)  %></li>
+      <li><%= link_to "sign out", destroy_user_session_path, :method => :delete %></li>
+    </ul>
+  <% else %>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "sign in", new_user_session_path %></li>
+      <li><%= link_to "sign up", new_user_registration_path %></li>
+    </ul>
+  <% end %>
+</nav>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
