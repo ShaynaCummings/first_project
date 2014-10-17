@@ -1,1 +1,16 @@
-<h2>front page</h2>
+<div class="page-header">
+  <h2>front page</h2></div>
+
+
+  <%   @pictures.each do |picture| %>
+  <% image = picture.url %>
+  <table>
+    <tbody>
+
+      <tr>
+        <td><img src="<% image %>"></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+

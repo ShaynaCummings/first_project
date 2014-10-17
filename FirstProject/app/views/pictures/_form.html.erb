@@ -1,0 +1,12 @@
+<%= form_for @picture do |f| %>
+
+<div class="container">
+  <p>
+  <%= f.label "Picture URL:" %>
+  <%= f.text_field :url %>
+  <p>
+  <%= f.hidden_field :user_id %>
+
+  <%= f.submit "save" %>
+  <% end %>
+</div>

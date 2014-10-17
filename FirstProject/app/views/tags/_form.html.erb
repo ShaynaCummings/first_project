@@ -1,0 +1,13 @@
+<%= form_for @tag do |f| %>
+
+<div class="container">
+  <p>
+  <%= f.label "Tag": %>
+  <%= f.text_field :tag_name %>
+  <p>
+  <%= f.hidden_field :tag_id %>
+  <%= f.hidden_field :user_id %>
+
+  <%= f.submit "save"%>
+  <% end %>
+</div>
