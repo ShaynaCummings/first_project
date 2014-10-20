@@ -35,12 +35,18 @@ ActiveRecord::Schema.define(version: 20141020040637) do
     t.datetime "updated_at",    null: false
   end
 
+  add_index "pictures", ["user_id"], name: "index_pictures_on_user_id", using: :btree
+
   create_table "tags", force: true do |t|
     t.string   "tag_name"
     t.integer  "picture_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "tags", ["picture_id"], name: "index_tags_on_picture_id", using: :btree
+  add_index "tags", ["user_id"], name: "index_tags_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

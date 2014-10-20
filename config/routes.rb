@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'pictures#index'
 
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  # match '/auth/twitter/callback', to: 'sessions#create', via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,7 +5,7 @@ class CreatePictures < ActiveRecord::Migration
       t.string :url
       t.integer :times_saved
       t.integer :times_skipped
-      t.belongs_to :user
+      t.belongs_to :user, index: true
 
       t.timestamps null: false
     end

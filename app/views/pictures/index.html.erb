@@ -1,14 +1,28 @@
 <div class="page-header">
-  <h2>front page</h2></div>
+  <h2><%= current_user.email %>'s GifWallet!</h2>
+</div>
 
+<p>
+<%= link_to "Add a new gif", new_picture_path %>
+</p>
 
-  <%   @pictures.each do |picture| %>
-  <% image = picture.url %>
   <table>
-    <tbody>
-
+    <thead>
       <tr>
-        <td><img src="<% image %>"></td>
+        <th>url</th>
+        <th>pic</th>
+        <th>edit</th>
+        <th>tags</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @pictures.each do |picture| %>
+  <% image = "<img src=\"#{picture.url}\">" %>
+      <tr>
+        <td><%= picture.url %></td>
+        <td><a href="<%= picture.url %>" target="_blank"  ><img src="<%= picture.url %>" width= 100px></a></td>
+        <td><%= link_to "edit", edit_picture_path(picture) %></td>
+        <td> tags </td>
       </tr>
       <% end %>
     </tbody>
