@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.3'
+
 gem 'devise'
 gem 'twitter'
 gem 'redditkit', '~> 1.0.1'
@@ -8,6 +10,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-youtube'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
+gem 'dotenv-rails'
 gem 'rails_12factor', group: :production
 
 
