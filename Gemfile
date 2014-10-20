@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'twitter'
 gem 'redditkit', '~> 1.0.1'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
