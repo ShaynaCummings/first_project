@@ -22,9 +22,9 @@
         <% image = "<img src=\"#{picture.url}\">" %>
           <tr>
             <td><%= picture.id %></td>
-            <td><%= picture.url %></td>
-            <td><a href="<%= picture.url %>" target="_blank"  ><img src="<%= picture.url %>" width= 100px></a></td>
-            <td><%= link_to "edit", edit_picture_path(picture) %></td>
+            <td><%= link_to picture.url, picture.url %></td>
+            <td><a href="<%= picture.url %>"><img src="<%= picture.url %>" width= 100px></a></td>
+            <td><%= link_to "edit", edit_picture_path(picture) if user_signed_in? %></td>
             <td> tags </td>
           </tr>
         <% end %>

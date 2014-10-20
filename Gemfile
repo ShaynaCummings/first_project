@@ -10,6 +10,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-youtube'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
+gem 'omniauth'
 gem 'rails_12factor', group: :production
 
 

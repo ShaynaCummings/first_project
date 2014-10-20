@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   resources :tags
   root 'pictures#index'
 
-  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
+  get '/auth/:provider/callback', to: 'sessions#create'
+  # match 'auth/failure', to redirect('/')
+
+  # match '/auth/:provider/callback' =&gt; 'authentications#create'
   # match '/auth/twitter/callback', to: 'sessions#create', via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.

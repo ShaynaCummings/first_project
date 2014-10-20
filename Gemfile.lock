@@ -250,6 +250,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.0.beta2)
+  omniauth
   omniauth-facebook
   omniauth-github
   omniauth-google-oauth2
