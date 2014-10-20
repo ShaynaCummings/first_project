@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!
+  # before_action :find_picture
 
   def index
     @pictures = Picture.all
@@ -28,6 +29,12 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
     @picture.update(picture_params)
     redirect_to @picture, notice: "updated"
+  end
+
+  def destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    redirect_to :back, notice: "deleted!"
   end
 
   private

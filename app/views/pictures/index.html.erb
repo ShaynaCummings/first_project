@@ -9,6 +9,7 @@
   <table>
     <thead>
       <tr>
+        <th>id</th>
         <th>url</th>
         <th>pic</th>
         <th>edit</th>
@@ -16,14 +17,17 @@
       </tr>
     </thead>
     <tbody>
-  <% @pictures.each do |picture| %>
-  <% image = "<img src=\"#{picture.url}\">" %>
-      <tr>
-        <td><%= picture.url %></td>
-        <td><a href="<%= picture.url %>" target="_blank"  ><img src="<%= picture.url %>" width= 100px></a></td>
-        <td><%= link_to "edit", edit_picture_path(picture) %></td>
-        <td> tags </td>
-      </tr>
+      <% @pictures.each do |picture| %>
+      <% if picture.user_id == current_user.id %>
+        <% image = "<img src=\"#{picture.url}\">" %>
+          <tr>
+            <td><%= picture.id %></td>
+            <td><%= picture.url %></td>
+            <td><a href="<%= picture.url %>" target="_blank"  ><img src="<%= picture.url %>" width= 100px></a></td>
+            <td><%= link_to "edit", edit_picture_path(picture) %></td>
+            <td> tags </td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
