@@ -1,5 +1,25 @@
-<h1><%= current_user %>'s profile page</h1>
-name: sdghkjsdgh
-secret weapon: werhjke
+<h1><%= @user.email %>'s GifWallet</h1>
+<table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>url</th>
+        <th>pic</th>
+        <th>tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.pictures.each do |picture| %>
+      <% if picture.user_id == @user.id %>
+        <% image = "<img src=\"#{picture.url}\">" %>
+          <tr>
+            <td><%= picture.id %></td>
+            <td><%= picture.url %></td>
+            <td><a href="<%= picture.url %>" target="_blank"  ><img src="<%= picture.url %>" width= 100px></a></td>
+            <td> tags </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
 
-<h3>CuteCache</h3>
