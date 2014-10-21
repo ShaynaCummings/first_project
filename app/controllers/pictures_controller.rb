@@ -6,8 +6,8 @@ class PicturesController < ApplicationController
   end
 
   def show
-    params
-    @picture = Picture.find[params[:id]]
+    # params
+    @picture = Picture.find(params[:id])
     # @tag = @picture.tags.new
   end
 
@@ -35,7 +35,7 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   end
 
   # def new_array

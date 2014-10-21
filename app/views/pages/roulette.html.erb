@@ -14,13 +14,10 @@
   <ul>
     <% aww_data = HTTParty.get("http://www.reddit.com/r/aww/hot/.json?limit=50") %>
     <% links_list = aww_data["data"]["children"].map { |id| id["data"]["url"] } %>
-    <% links_list.map do |link| %>
-      <% if link[-1,1] == "g" %>
-      <li> <img src="<%= links_list.sample %>" width=400px></li>
-      <% end %>
-    <% end %>
+
+      <img src="<%= links_list.sample %>" width=400px></li>
+
   </ul>
-  RANDOM
 
 
 </div>
