@@ -13,6 +13,6 @@
  *= require_tree .
  *= require_self
  *= require bootstrap
+ *= app/assets/stylesheets/custom.css
 
  */
-assets/stylesheets/custom.css

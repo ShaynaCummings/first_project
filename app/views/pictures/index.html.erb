@@ -9,8 +9,8 @@
   <ul>
       <% @pictures.each do |picture| %>
         <% image = "<img src=\"#{picture.url}\">" %>
-          <li class="img-thumbnail">
-            <a href="<%= picture_path(picture.user.id) %>"><img src="<%= picture.url %>" width= 100px></a><br />
+          <li class="img-thumbnail thumbnail-caption">
+            <a href="<%= picture_path(picture.user.id) %>"><img class= "thumbs-lib" src="<%= picture.url %>"></a><br />
             by: <%= picture.user.name %>
           </li>
       <% end %>

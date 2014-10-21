@@ -1,3 +1,7 @@
+*{
+
+}
+
 nav {
   padding: 5px;
 }
@@ -11,4 +15,12 @@ body {
 
 td {
     word-wrap:break-word;
+}
+
+.thumbnail-caption {
+  font-size: 10px;
+}
+
+.thumbs-lib {
+  width: 100px;
 }
