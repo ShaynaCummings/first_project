@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tags
   get "/random", to: "pages#random", as: :random_page
-  root 'pictures#index'
+  root :to => "users#show", :id => '1'
 
   # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 

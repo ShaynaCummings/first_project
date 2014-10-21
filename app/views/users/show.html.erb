@@ -1,27 +1,29 @@
-<h1><%= @user.email %>'s GifWallet</h1>
+<h3><%= @user.email %>'s GifWallet</h3>
 
-  <table>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>url</th>
-          <th>pic</th>
-          <th>tags</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @user.pictures.each do |picture| %>
-        <% if picture.user_id == @user.id %>
-          <% image = "<img src=\"#{picture.url}\">" %>
-            <tr>
-              <td><%= picture.id %></td>
-              <td><%= picture.url %></td>
-              <td><a href="<%= picture.url %>" target="_blank"  ><img src="<%= picture.url %>" width= 100px></a></td>
-              <td> tags </td>
-            </tr>
-          <% end %>
+  <table class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>pic</th>
+        <th>url</th>
+        <th></th>
+        <th>tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.pictures.each do |picture| %>
+      <% if picture.user_id ==  @user.id %>
+        <% image = "<img src=\"#{picture.url}\">" %>
+          <tr>
+            <td><a href="<%= picture_path(picture.id) %>"><img src="<%= picture.url %>" class="img-thumbnail" width= 100px></a></td>
+            <td><%= link_to picture.url, picture.url %></td>
+            <td><%= link_to "edit", edit_picture_path(picture) if self.current_user == @user %></td>
+            <td> tags </td>
+          </tr>
         <% end %>
-      </tbody>
-    </table>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= @user.email %>
 
 
