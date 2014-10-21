@@ -2,16 +2,12 @@
   <h3>library of all gifs</h3>
 </div>
 
-<p>
-<%= link_to "Add a new gif", new_picture_path %>
-</p>
-
   <ul>
       <% @pictures.each do |picture| %>
         <% image = "<img src=\"#{picture.url}\">" %>
           <li class="img-thumbnail thumbnail-caption">
             <a href="<%= picture_path(picture.user.id) %>"><img class= "thumbs-lib" src="<%= picture.url %>"></a><br />
-            by: <%= picture.user.name %>
+            by: <%= link_to picture.user.name, user_path(picture.user) %>
           </li>
       <% end %>
   </ul>
