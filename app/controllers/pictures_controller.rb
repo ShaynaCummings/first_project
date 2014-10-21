@@ -8,6 +8,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find[params[:id]]
+    @tag = @picture.tags.new
   end
 
   def new
