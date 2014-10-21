@@ -1,5 +1,4 @@
 class PicturesController < ApplicationController
-  before_action :authenticate_user!
   # before_action :find_picture
 
   def index
