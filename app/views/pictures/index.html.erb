@@ -6,18 +6,15 @@
 <%= link_to "Add a new gif", new_picture_path %>
 </p>
 
-  <table class="table">
-    <tbody>
+  <ul>
       <% @pictures.each do |picture| %>
         <% image = "<img src=\"#{picture.url}\">" %>
-          <td>
-            from: <%= picture.user.email %><br />
-            <a href="<%= picture_path(picture.user.id) %>"><img src="<%= picture.url %>" class="img-thumbnail" width= 100px></a>
-          </td>
-
+          <li class="img-thumbnail">
+            <a href="<%= picture_path(picture.user.id) %>"><img src="<%= picture.url %>" width= 100px></a><br />
+            by: <%= picture.user.name %>
+          </li>
       <% end %>
-    </tbody>
-  </table>
+  </ul>
 
 
 
