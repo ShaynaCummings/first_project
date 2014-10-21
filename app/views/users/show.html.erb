@@ -12,6 +12,7 @@
         <th>pic</th>
         <th>url</th>
         <th></th>
+        <th></th>
         <th>tags</th>
       </tr>
     </thead>
@@ -20,8 +21,9 @@
       <% if picture.user_id ==  @user.id %>
         <% image = "<img src=\"#{picture.url}\">" %>
           <tr>
-            <td><a href="<%= picture_path(picture.id) %>"><img src="<%= picture.url %>" class="img-thumbnail" width= 100px></a></td>
+            <td><a href="<%= picture_path(picture.id) %>"><img src="<%= picture.url %>" class="img-thumbnail thumbs-lib"></a></td>
             <td><%= link_to picture.url, picture.url %></td>
+            <td><%= link_to "get gfycat", picture.url %></td>
             <td><%= link_to "edit", edit_picture_path(picture) if self.current_user == @user %></td>
             <td> tags </td>
           </tr>

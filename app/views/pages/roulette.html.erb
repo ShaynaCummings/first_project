@@ -1,0 +1,26 @@
+<div class="container">
+  <h3> roulette!</h3>
+
+  <p>
+  <select name="subreddit">
+    <option value="" selected="selected">Pick a subreddit source</option>
+    <option value="r/reactiongifs">r/reactiongifs</option>
+    <option value="r/aww">r/aww</option>
+    <option value="r/gifs">r/gifs</option>
+    <option value="r/animalsbeingderps">r/animalsbeingderps</option>
+  </select>
+  </p>
+
+  <ul>
+    <% aww_data = HTTParty.get("http://www.reddit.com/r/aww/hot/.json?limit=50") %>
+    <% links_list = aww_data["data"]["children"].map { |id| id["data"]["url"] } %>
+    <% links_list.map do |link| %>
+      <% if link[-1,1] == "g" %>
+      <li> <img src="<%= links_list.sample %>" width=400px></li>
+      <% end %>
+    <% end %>
+  </ul>
+  RANDOM
+
+
+</div>

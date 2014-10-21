@@ -19,7 +19,7 @@ class PicturesController < ApplicationController
     @picture = Picture.create(picture_params)
     @picture.user_id = current_user.id
     @picture.save
-    redirect_to pictures_path
+    redirect_to user_path(current_user)
   end
 
   def edit
@@ -35,18 +35,30 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
-    redirect_to :back, notice: "deleted!"
+    redirect_to user_path
   end
 
-  def new_array
-    @pictures ||= Array.new
-    @pictures.push(url)
-    @pictures
-  end
+  # def new_array
+  #   @pictures ||= Array.new
+  #   @pictures.push(url)
+  #   @pictures
+  # end
 
-  def random
-    new_array[rand(new_array.length)]
-  end
+  # def random
+  #   new_array[rand(new_array.length)]
+  # end
+
+  # def gfycat_convert
+  #   @picture = Picture.find(params[:id])
+  #   @picture.url.gsub(/http:\/\//, '')
+  #   @picture.url.gsub(/https:\/\//, '')
+  #   @picture
+  #   # url = "http://upload.gfycat.com/transcode?fetchUrl=#{@picture.url}"
+  # end
+
+  # def gfycat_url
+  #   ""["gfyname"]
+  # end
 
   private
 

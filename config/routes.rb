@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :pictures
   resources :users
   resources :tags
-  get "/random", to: "pages#random", as: :random_page
-  root :to => "users#show", :id => '1'
+  get "/roulette", to: "pages#roulette", as: :roulette_page
+  get 'profile', to: 'users#show', as: 'profile'
+  root to: "pages#welcome"
+
   # get 'users/:id' => 'users#show'
 
   # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
