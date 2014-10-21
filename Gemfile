@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.1.3'
 
+gem 'bitly'
+gem 'therubyracer'
 gem 'devise'
 gem 'twitter'
 gem 'redditkit', '~> 1.0.1'

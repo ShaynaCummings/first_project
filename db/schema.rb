@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141020040637) do
   create_table "identities", force: true do |t|
     t.integer  "user_id"
     t.string   "provider"
-    t.string   "uidd"
+    t.string   "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   resources :pictures
   resources :users
   resources :tags
+  get "/random", to: "pages#random", as: :random_page
   root 'pictures#index'
 
   # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  # get '/auth/:provider/callback', to: 'sessions#create'
   # match 'auth/failure', to redirect('/')
 
   # match '/auth/:provider/callback' =&gt; 'authentications#create'

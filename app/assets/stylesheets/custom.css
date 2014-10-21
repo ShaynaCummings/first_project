@@ -1,3 +1,14 @@
-* {
+nav {
   padding: 5px;
+}
+
+body {
+  font-family: Georgia, Times, serif;
+  padding: 5px;
+  background:#FAFAFA;
+}
+
+
+td {
+    word-wrap:break-word;
 }

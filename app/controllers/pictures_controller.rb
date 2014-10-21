@@ -37,6 +37,16 @@ class PicturesController < ApplicationController
     redirect_to :back, notice: "deleted!"
   end
 
+  def new_array
+    @pictures ||= Array.new
+    @pictures.push(url)
+    @pictures
+  end
+
+  def random
+    new_array[rand(new_array.length)]
+  end
+
   private
 
     def find_picture
