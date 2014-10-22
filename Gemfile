@@ -9,6 +9,9 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'rails_12factor', group: :production
 gem 'httparty'
+gem 'twitter'
+gem 'oauth'
+gem 'omniauth-twitter'
 
 gem 'zeroclipboard-rails'
 
