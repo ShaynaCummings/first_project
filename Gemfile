@@ -8,6 +8,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'rails_12factor', group: :production
+gem 'httparty'
 
 gem 'zeroclipboard-rails'
 
