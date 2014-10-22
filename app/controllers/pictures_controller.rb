@@ -52,6 +52,7 @@ class PicturesController < ApplicationController
   #   @picture = Picture.find(params[:id])
   #   @picture.url.gsub(/http:\/\//, '')
   #   @picture.url.gsub(/https:\/\//, '')
+    # @picture.url.chomp('https')
   #   @picture
   #   # url = "http://upload.gfycat.com/transcode?fetchUrl=#{@picture.url}"
   # end

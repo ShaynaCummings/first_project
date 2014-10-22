@@ -3,6 +3,11 @@ class PagesController < ApplicationController
 
   end
 
+  def roulette
+    @reddit_results = HTTParty.get("http://www.reddit.com/r/aww/hot/.json?limit=50")
+    @links_list = @reddit_results["data"]["children"].map { |id| id["data"]["url"] }
+    @links_list.reject {|x| x["jpg"]==nil}
+  end
 
 end
 

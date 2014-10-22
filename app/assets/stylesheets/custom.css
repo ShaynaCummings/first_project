@@ -1,20 +1,24 @@
+
+
 *{
 
 }
+
+body {
+  padding: 5px;
+  background-image: url('ps_neutral.png');
+}
+
 
 nav {
   padding: 5px;
 }
 
-body {
-  font-family: Georgia, Times, serif;
-  padding: 5px;
-  background:#FAFAFA;
-}
+
 
 
 td {
-    word-wrap:break-word;
+  word-wrap:break-word;
 }
 
 .thumbnail-caption {

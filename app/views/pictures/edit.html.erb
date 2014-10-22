@@ -4,12 +4,6 @@
 <%= render 'form' %>
 </div>
 
-
 <p>
-<%= link_to 'Delete this', method: :delete, data: {confirm: 'Are you sure?'} %>
-</p>
-
-
-<p>
-<%= button_to "delete", @picture, method: :delete %>
+<%= button_to "delete this", @picture, method: :delete %>
 </p>
