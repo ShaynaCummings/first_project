@@ -42,7 +42,7 @@
               </script>
             </td>
 
-            <td><%= link_to "get gfycat", picture %></td>
+            <td><%= link_to "get gfycat", picture.gfy_url %></td>
             <td><%= link_to "edit", edit_picture_path(picture) if self.current_user == @user %></td>
             <td><%= button_to "delete this", @picture, method: :delete  if self.current_user == @user %></td>
             <td> tags </td>
