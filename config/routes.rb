@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :users
   resources :tags
   get "/roulette", to: "pages#roulette", as: :roulette_page
-  get 'profile', to: 'users#show', as: 'profile'
   root to: "pictures#index"
 
   # get 'users/:id' => 'users#show'

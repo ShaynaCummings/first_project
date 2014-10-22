@@ -6,8 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-
+# p = Picture.all
+# p.each do |x|
+#   if (x.gfy_url == nil)
+#     x.gify_url = gfycat_convert(x.url)
+#   end
+# end
 
 # pictures = Picture.create(
 #   [

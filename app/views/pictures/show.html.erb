@@ -1,27 +1,20 @@
+<div class="container">
 
 <p><img src="<%= @picture.url %>"></p>
 
-<p> URL: <%= link_to @picture.url, @picture.url %></p>
+<p> by: <%= link_to @picture.user.name, user_path(@picture.user) %></p>
 
-<p> GFYCAT: <%= link_to 'gfycat', @picture.url %></p>
+<p> original link: <%= link_to @picture.url, @picture.url %></p>
 
-<p>save to cutecache</p>
+<p> gfycat link: <%= link_to 'gfycat', @picture.gfy_url %></p>
+
+<p><%= button_to 'save to mygifwallet', new_picture_path %></p>
+
 <p>tags</p>
 
+<%= button_to "delete this", @picture, method: :delete if self.current_user == @picture.user %>
 
 <%= link_to "back to library", pictures_path %>
-
-
-<%= form_for @picture.tag do |f| %>
-
-<div class="container">
-  <p>
-  <%= f.label "enter a tag" %>
-  <%= f.text_field :tag_name %>
-  <p>
-  <%= f.hidden_field :picture_id %>
-  <%= f.hidden_field :user_id %>
-
-  <%= f.submit "save"%>
-  <% end %>
 </div>
+
+
