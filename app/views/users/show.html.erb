@@ -13,6 +13,7 @@
         <th>url</th>
         <th></th>
         <th></th>
+        <th></th>
         <th>tags</th>
       </tr>
     </thead>
@@ -23,7 +24,14 @@
           <tr>
             <td><a href="<%= picture_path(picture.id) %>"><img src="<%= picture.url %>" class="img-thumbnail thumbs-lib"></a></td>
             <td><%= link_to picture.url, picture.url %></td>
-            <td><%= link_to "get gfycat", picture.gfycat_convert %></td>
+            <td>
+              <button id="copy-button" data-clipboard-text=<%= picture.url %> title="Click to copy me.">Copy to Clipboard</button>
+              <script src="ZeroClipboard.js"></script>
+              <script src="main.js"></script>
+
+            </td>
+
+            <td><%= link_to "get gfycat", picture %></td>
             <td><%= link_to "edit", edit_picture_path(picture) if self.current_user == @user %></td>
             <td> tags </td>
           </tr>

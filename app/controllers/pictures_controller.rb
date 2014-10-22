@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   # before_action :find_picture
+  require 'pry'
 
   def index
     @pictures = Picture.all
@@ -40,7 +41,9 @@ class PicturesController < ApplicationController
   end
 
   def gfycat_convert
-    # @picture = Picture.find(params[:id])
+    binding.pry
+    @picture = Picture.find(params[:id])
+    @picture.url
     @httpless = @picture.url.gsub(/http:\/\//, '')
     # @picture.url.gsub(/https:\/\//, '')
     # @picture.url.chomp('https')

@@ -5,16 +5,11 @@ ruby '2.1.3'
 gem 'bitly'
 gem 'therubyracer'
 gem 'devise'
-gem 'twitter'
-gem 'redditkit', '~> 1.0.1'
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-youtube'
-gem 'omniauth-github'
-gem 'omniauth-twitter'
 gem 'omniauth'
 gem 'rails_12factor', group: :production
 
+gem 'zeroclipboard-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.beta2'

@@ -36,7 +36,6 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    addressable (2.3.6)
     arel (6.0.0.beta1)
     bcrypt (3.1.7)
     binding_of_caller (0.7.3.pre1)
@@ -45,7 +44,6 @@ GEM
       httparty (>= 0.7.6)
       multi_json (~> 1.3)
       oauth2 (>= 0.5.0, < 2.0)
-    buftok (0.2.0)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -72,7 +70,6 @@ GEM
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
-    equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.2.2)
     faraday (0.9.0)
@@ -81,10 +78,6 @@ GEM
       activesupport (>= 4.1.0)
     hashie (3.3.1)
     hike (1.2.3)
-    htmlentities (4.3.2)
-    http (0.6.2)
-      http_parser.rb (~> 0.6.0)
-    http_parser.rb (0.6.0)
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -103,19 +96,15 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
-    memoizable (0.4.2)
-      thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
-    mime-types (2.4.2)
+    mime-types (2.4.3)
     mini_portile (0.6.0)
     minitest (5.4.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    naught (1.0.0)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -127,25 +116,11 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (2.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-github (1.1.2)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
-    omniauth-google-oauth2 (0.2.5)
-      omniauth (> 1.0)
-      omniauth-oauth2 (~> 1.1)
-    omniauth-oauth (1.0.1)
-      oauth
-      omniauth (~> 1.0)
     omniauth-oauth2 (1.2.0)
       faraday (>= 0.8, < 0.10)
       multi_json (~> 1.3)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    omniauth-twitter (1.1.0)
-      multi_json (~> 1.3)
-      omniauth-oauth (~> 1.0)
-    omniauth-youtube (2.1)
-      omniauth-oauth2 (~> 1.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
     pry (0.10.1)
@@ -192,12 +167,8 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
-    redditkit (1.0.1)
-      faraday (~> 0.8)
-      htmlentities (~> 4.3)
-      multi_json (~> 1.8)
     ref (1.0.5)
-    responders (2.0.0)
+    responders (2.0.1)
       railties (>= 4.2.0.alpha, < 5)
     sass (3.4.6)
     sass-rails (5.0.0.beta1)
@@ -208,7 +179,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    simple_oauth (0.2.0)
     slop (3.6.0)
     spring (1.1.3)
     sprockets (2.12.2)
@@ -228,17 +198,6 @@ GEM
     tilt (1.4.1)
     turbolinks (2.4.0)
       coffee-rails
-    twitter (5.11.0)
-      addressable (~> 2.3)
-      buftok (~> 0.2.0)
-      equalizer (~> 0.0.9)
-      faraday (~> 0.9.0)
-      http (~> 0.6.0)
-      http_parser.rb (~> 0.6.0)
-      json (~> 1.8)
-      memoizable (~> 0.4.0)
-      naught (~> 1.0)
-      simple_oauth (~> 0.2.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -251,6 +210,8 @@ GEM
       binding_of_caller (= 0.7.3.pre1)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    zeroclipboard-rails (0.1.0)
+      railties (>= 3.1)
 
 PLATFORMS
   ruby
@@ -265,21 +226,16 @@ DEPENDENCIES
   jquery-rails (~> 4.0.0.beta2)
   omniauth
   omniauth-facebook
-  omniauth-github
-  omniauth-google-oauth2
-  omniauth-twitter
-  omniauth-youtube
   pg
   pry-byebug
   pry-rails
   rails (= 4.2.0.beta2)
   rails_12factor
-  redditkit (~> 1.0.1)
   sass-rails (~> 5.0.0.beta1)
   sdoc (~> 0.4.0)
   spring
   therubyracer
   turbolinks
-  twitter
   uglifier (>= 1.3.0)
   web-console (~> 2.0.0.beta4)
+  zeroclipboard-rails
