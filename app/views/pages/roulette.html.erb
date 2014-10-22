@@ -1,6 +1,7 @@
 <div class="container">
   <h3> roulette!</h3>
 
+  <%= link_to 'Hit me', roulette_page_path %>
   <p>
   <select name="subreddit">
     <option value="" selected="selected">Pick a subreddit source</option>
@@ -13,8 +14,6 @@
 
 
   <img src="<%= @links_list.sample %>" width=400px>
-
-
 
 
 </div>

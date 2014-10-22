@@ -1,11 +1,13 @@
-<div class="page-header">
-  <h2>show page</h2>
 
-</div>
+<p><img src="<%= @picture.url %>"></p>
 
+<p> URL: <%= link_to @picture.url, @picture.url %></p>
 
-<img src="">
+<p> GFYCAT: <%= link_to 'gfycat', @picture.url %></p>
+
 <p>save to cutecache</p>
-<p>next</p>
 <p>tags</p>
+
+
+<%= link_to "back to library", pictures_path %>
 

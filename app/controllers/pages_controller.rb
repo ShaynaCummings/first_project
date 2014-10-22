@@ -1,8 +1,13 @@
 class PagesController < ApplicationController
-  def show
 
+  def pick_subreddit
+    @subreddit = Subreddit.new
   end
 
+  def reload
+  end
+
+  # method to get pics from reddit to pass to roullette view
   def roulette
     @reddit_results = HTTParty.get("http://www.reddit.com/r/aww/hot/.json?limit=50")
     @links_list = @reddit_results["data"]["children"].map { |id| id["data"]["url"] }
