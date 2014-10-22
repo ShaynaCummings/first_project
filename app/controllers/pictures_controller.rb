@@ -3,12 +3,13 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all
+    @tags = Tag.all
   end
 
   def show
     # params
     @picture = Picture.find(params[:id])
-    # @tag = @picture.tags.new
+    # @tag = Tag.picture.find(params[:id])
   end
 
   def new
@@ -38,27 +39,18 @@ class PicturesController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  # def new_array
-  #   @pictures ||= Array.new
-  #   @pictures.push(url)
-  #   @pictures
-  # end
-
-  # def random
-  #   new_array[rand(new_array.length)]
-  # end
-
-  # def gfycat_convert
-  #   @picture = Picture.find(params[:id])
-  #   @picture.url.gsub(/http:\/\//, '')
-  #   @picture.url.gsub(/https:\/\//, '')
+  def gfycat_convert
+    # @picture = Picture.find(params[:id])
+    @httpless = @picture.url.gsub(/http:\/\//, '')
+    # @picture.url.gsub(/https:\/\//, '')
     # @picture.url.chomp('https')
-  #   @picture
-  #   # url = "http://upload.gfycat.com/transcode?fetchUrl=#{@picture.url}"
-  # end
+    @upload_url = "http://upload.gfycat.com/transcode?fetchUrl=#{@httpless}"
+    @gfycat_results = HTTParty.get(@upload_url)
+    @gfy_slug = @gfycat_results["gfyName"]
+    @gfy_url = "http://www.gfycat.com/#{@gfy_slug}"
+   end
 
   # def gfycat_url
-  #   ""["gfyname"]
   # end
 
   private
