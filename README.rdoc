@@ -1,3 +1,5 @@
 == GifWallet!
 
 This is a nifty gadget that will allow you to keep track of permalinks to all of your favorite gifs, and easily convert to HTML5 movies for speedier playback. If you're in need of some gif-inspiration, it also provides a fun GifRoulette utility, with a nod to our friends over at r/awwgifs.
+
+{planning docs}[https://github.com/ShaynaCummings/first_project/blob/master/app/assets/images/GifWalletPlanningDoc.pdf?raw=true]
