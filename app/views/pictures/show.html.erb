@@ -12,6 +12,21 @@
 
   <p>tags</p>
 
+  <%= form_for @tag do |f| %>
+  <p>
+  <%= f.label "add a tag" %>
+  <%= f.text_field :tag_name %>
+  </p>
+  <p>
+  <%= f.hidden_field :picture_id %>
+  <%= f.hidden_field :user_id %>
+
+  <%= f.submit "Submit Tag" %>
+  </p>
+<% end %>
+</div>
+
+
   <%= button_to "delete this", @picture, method: :delete if self.current_user == @picture.user %>
 
   <%= link_to "back to library", pictures_path %>

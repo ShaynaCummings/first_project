@@ -2,9 +2,9 @@ class TagsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :find_tag, only: [:show, :destroy]
 
-  # # def index
-  #   @tags = Tag.all
-  # end
+  def index
+     @tags = Tag.all
+  end
 
   def show
   end

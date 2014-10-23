@@ -7,6 +7,8 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @tag = @picture.tags.new
+    # @tags = Tag.all
   end
 
   def new
