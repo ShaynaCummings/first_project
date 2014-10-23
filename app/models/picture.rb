@@ -6,7 +6,7 @@ class Picture < ActiveRecord::Base
   has_many :tags
   belongs_to :user
 
-
+  # need to clean this up to deal with https images
   def gfy_convert(url)
     httpless = url.gsub(/http:\/\//, '')
     # @picture.url.gsub(/https:\/\//, '')

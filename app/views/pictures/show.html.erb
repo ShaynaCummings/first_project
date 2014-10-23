@@ -1,20 +1,20 @@
 <div class="container">
 
-<p><img src="<%= @picture.url %>"></p>
+  <p><img src="<%= @picture.url %>"></p>
 
-<p> by: <%= link_to @picture.user.name, user_path(@picture.user) %></p>
+  <p> by: <%= link_to @picture.user.name, user_path(@picture.user) %></p>
 
-<p> original link: <%= link_to @picture.url, @picture.url %></p>
+  <p> original link: <%= link_to @picture.url, @picture.url %></p>
 
-<p> gfycat link: <%= link_to 'gfycat', @picture.gfy_url %></p>
+  <p> gfycat link: <%= link_to 'gfycat', @picture.gfy_url %></p>
 
-<p><%= button_to 'save to mygifwallet', new_picture_path %></p>
+  <p><%= button_to 'save to mygifwallet', new_picture_path %></p>
 
-<p>tags</p>
+  <p>tags</p>
 
-<%= button_to "delete this", @picture, method: :delete if self.current_user == @picture.user %>
+  <%= button_to "delete this", @picture, method: :delete if self.current_user == @picture.user %>
 
-<%= link_to "back to library", pictures_path %>
+  <%= link_to "back to library", pictures_path %>
 </div>
 
 
