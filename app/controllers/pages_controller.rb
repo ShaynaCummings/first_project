@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     @links_list
   end
 
+  # this will be a better version of the above, where the user can specify the subreddit
   def subreddit_roulette(subreddit)
     @reddit_results = HTTParty.get("http://www.reddit.com/r/#{subreddit}/hot/.json?limit=50")
     @links_list = @reddit_results["data"]["children"].map { |id| id["data"]["url"] }

@@ -8,7 +8,6 @@ class PicturesController < ApplicationController
 
   def show
     @tag = @picture.tags.new
-    # @tags = Tag.all
   end
 
   def new
@@ -33,23 +32,9 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), notice: "picture deleted!"
   end
 
-
-  # def gfycat_convert
-  #   @picture.url
-  #   httpless = @picture.url.gsub(/http:\/\//, '')
-  #   # @picture.url.gsub(/https:\/\//, '')
-  #   # @picture.url.chomp('https')
-  #   upload_url = "http://upload.gfycat.com/transcode?fetchUrl=#{httpless}"
-  #   gfycat_results = HTTParty.get(upload_url)
-  #   @gfy_slug = gfycat_results["gfyName"]
-  #   @gfy_url = "http://www.gfycat.com/#{@gfy_slug}"
-  #  end
-
-  # def gfycat_url
-  # end
 
   private
 

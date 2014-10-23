@@ -1,35 +1,47 @@
 <div class="container">
 
-  <p><img src="<%= @picture.url %>"></p>
-
-  <p> by: <%= link_to @picture.user.name, user_path(@picture.user) %></p>
-
-  <p> original link: <%= link_to @picture.url, @picture.url %></p>
-
-  <p> gfycat link: <%= link_to 'gfycat', @picture.gfy_url %></p>
-
-  <p><%= button_to 'save to mygifwallet', new_picture_path %></p>
-
-  <p>tags</p>
-
-  <%= form_for @tag do |f| %>
   <p>
-  <%= f.label "add a tag" %>
-  <%= f.text_field :tag_name %>
+  <img src="<%= @picture.url %>">
   </p>
+
   <p>
-  <%= f.hidden_field :picture_id %>
-  <%= f.hidden_field :user_id %>
-
-  <%= f.submit "Submit Tag" %>
+  added by: <%= link_to @picture.user.name, user_path(@picture.user) %>
   </p>
-<% end %>
+
+  <p>
+  tags: <% @picture.tags.each do |tag| %>
+  <%= tag.tag_name %>,
+  <% end %>
+  </p>
+
+  <%= form_for @tag do |f|  %>
+  <p>
+    <%= f.label "add a tag" %>
+    <%= f.text_field :tag_name %>
+  </p>
+
+  <p>
+    <%= f.hidden_field :picture_id %>
+    <%= f.hidden_field :user_id %>
+
+    <%= f.submit "Submit Tag" %>
+  </p>
+
+  <p>
+    original link: <%= link_to @picture.url, @picture.url %>
+  </p>
+
+  <p>
+    gfycat link: <%= link_to @picture.gfy_url, @picture.gfy_url %>
+  </p>
+
+  <p>
+    <%= button_to "delete this", @picture, method: :delete if self.current_user == @picture.user %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= link_to "back to library", pictures_path %>
+  </p>
+
 </div>
-
-
-  <%= button_to "delete this", @picture, method: :delete if self.current_user == @picture.user %>
-
-  <%= link_to "back to library", pictures_path %>
-</div>
-
-

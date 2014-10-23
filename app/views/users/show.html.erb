@@ -10,22 +10,30 @@
   <table class="table table-hover table-condensed table-responsive">
     <thead>
       <tr>
-        <th>pic</th>
-        <th>url</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>gif</th>
         <th>tags</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
+
     <tbody>
       <% @user.pictures.each do |picture| %>
       <% if picture.user_id ==  @user.id %>
         <% image = "<img src=\"#{picture.url}\">" %>
           <tr>
-            <td><a href="<%= picture_path(picture.id) %>"><img src="<%= picture.url %>" class="img-thumbnail thumbs-wallet"></a></td>
-            <td id="fe_text"><%= link_to picture.url, picture.url %></td>
-
+            <td>
+              <a href="<%= picture_path(picture.id) %>"><img src="<%= picture.url %>" class="img-thumbnail thumbs-wallet"></a>
+            </td>
+            <td>
+              <% picture.tags.each do |tag| %>
+              <%= tag.tag_name %>,
+              <% end %>
+            </td>
+            <td id="fe_text">
+              <%= link_to "gif permalink", picture.url %>
+            </td>
             <td>
               <button class='my_clip_button' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Click me to copy to clipboard.'>
                 <b>Copy to clipboard</b>
@@ -42,10 +50,10 @@
               </script>
             </td>
 
-            <td><%= link_to "get gfycat", picture.gfy_url %></td>
+            <td>
+            <%= link_to "gfycat link", picture.gfy_url %>
+            </td>
 
-            <td><%= button_to "delete this", @picture, method: :delete  if self.current_user == @user %></td>
-            <td> tags </td>
           </tr>
         <% end %>
       <% end %>

@@ -17,12 +17,11 @@ class TagsController < ApplicationController
     @tag = Tag.create(tag_params)
     @tag.user_id = current_user.id
     if @tag.save
-      redirect_to @tag, notice: "tagged"
+      redirect_to :back
     else
       render :new
     end
   end
-
 
   def destroy
     @tag.destroy
