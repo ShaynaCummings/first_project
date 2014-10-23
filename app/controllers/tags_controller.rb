@@ -19,7 +19,7 @@ class TagsController < ApplicationController
     if @tag.save
       redirect_to :back
     else
-      render :new
+      render :back
     end
   end
 

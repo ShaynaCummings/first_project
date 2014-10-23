@@ -5,38 +5,39 @@
   </p>
 
   <p>
-  added by: <%= link_to @picture.user.name, user_path(@picture.user) %>
+  <strong>Added by:</strong> <%= link_to @picture.user.name, user_path(@picture.user) %>
   </p>
 
   <p>
-  tags: <% @picture.tags.each do |tag| %>
-  <%= tag.tag_name %>,
+  <strong>Tags:</strong> <% @picture.tags.each do |tag| %>
+  #<%= tag.tag_name %>
   <% end %>
   </p>
 
   <%= form_for @tag do |f|  %>
   <p>
-    <%= f.label "add a tag" %>
+    <%= f.label "add a tag:" %>
     <%= f.text_field :tag_name %>
-  </p>
 
-  <p>
     <%= f.hidden_field :picture_id %>
     <%= f.hidden_field :user_id %>
 
-    <%= f.submit "Submit Tag" %>
+    <%= f.submit "add!" %>
+  </p>
+
+  <br/>
+  <p>
+    <strong>Original gif link:</strong> <%= link_to @picture.url, @picture.url %>
   </p>
 
   <p>
-    original link: <%= link_to @picture.url, @picture.url %>
+    <strong>Gfycat link:</strong> <%= link_to @picture.gfy_url, @picture.gfy_url %>
   </p>
 
-  <p>
-    gfycat link: <%= link_to @picture.gfy_url, @picture.gfy_url %>
-  </p>
+  <br/>
 
   <p>
-    <%= button_to "delete this", @picture, method: :delete if self.current_user == @picture.user %>
+    <%= button_to "Remove this gif", @picture, method: :delete if self.current_user == @picture.user %>
     <% end %>
   </p>
 
