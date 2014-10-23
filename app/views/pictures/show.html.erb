@@ -1,7 +1,7 @@
 <div class="container">
 
   <p>
-  <img src="<%= @picture.url %>">
+  <img src="<%= @picture.url %>" class="img-rounded">
   </p>
 
   <p>
@@ -10,7 +10,7 @@
 
   <p>
   <strong>Tags:</strong> <% @picture.tags.each do |tag| %>
-  #<%= tag.tag_name %>
+  #<%= link_to tag.tag_name, tag %>
   <% end %>
   </p>
 
@@ -22,7 +22,7 @@
     <%= f.hidden_field :picture_id %>
     <%= f.hidden_field :user_id %>
 
-    <%= f.submit "add!" %>
+    <%= f.submit "add!", class: "btn btn-default" %>
   </p>
 
   <br/>
@@ -37,7 +37,9 @@
   <br/>
 
   <p>
-    <%= button_to "Remove this gif", @picture, method: :delete if self.current_user == @picture.user %>
+    <% if self.current_user == @picture.user %>
+    <%= button_to "Remove this gif", @picture, method: :delete, class: "btn btn-default" %>
+    <% end %>
     <% end %>
   </p>
 
