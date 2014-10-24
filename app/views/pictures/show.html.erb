@@ -14,6 +14,7 @@
   <% end %>
   </p>
 
+<% if self.current_user == @picture.user %>
   <%= form_for @tag do |f|  %>
   <p>
     <%= f.label "add a tag:" %>
@@ -23,6 +24,7 @@
     <%= f.hidden_field :user_id %>
 
     <%= f.submit "add!", class: "btn btn-default" %>
+    <% end %>
   </p>
 
   <br/>
