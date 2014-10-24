@@ -5,6 +5,7 @@ class Picture < ActiveRecord::Base
 
   has_many :tags
   belongs_to :user
+  delegate :name, to: :user, prefix: true
 
   # need to clean this up to deal with https images
   def gfy_convert(url)

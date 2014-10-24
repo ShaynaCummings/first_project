@@ -19,7 +19,7 @@ class TagsController < ApplicationController
     if @tag.save
       redirect_to :back
     else
-      render :back
+      render @picture
     end
   end
 

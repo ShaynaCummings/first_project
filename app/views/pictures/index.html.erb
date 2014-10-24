@@ -7,7 +7,7 @@
       <% @pictures.each do |picture| %>
           <li class="img-thumbnail thumbnail-caption">
             <a href="<%= picture_path(picture.id) %>"><img class= "thumbs-lib" src="<%= picture.url %>"></a><br />
-            by: <%= link_to picture.user.name, user_path(picture.user) %>
+            by: <%= link_to picture.user_name, user_path(picture.user) %>
           </li>
       <% end %>
   </ul>
