@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
   resources :pictures
-  resources :users
-  resources :tags
+  resources :users, except: [:new, :create, :index]
+  resources :tags, except: [:edit, :update]
   get "/roulette", to: "pages#roulette", as: :roulette_page
   root to: "pictures#index"
 

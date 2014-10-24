@@ -15,7 +15,6 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.create(tag_params)
-    @tag.user_id = current_user.id
     if @tag.save
       redirect_to :back
     else

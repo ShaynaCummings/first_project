@@ -18,4 +18,8 @@ class Picture < ActiveRecord::Base
     gfy_url = "http://www.gfycat.com/#{gfy_slug}"
   end
 
+  def save_gfy(picture)
+    picture.gfy_url = picture.gfy_convert(picture.url)
+  end
+
 end

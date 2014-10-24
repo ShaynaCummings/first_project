@@ -16,7 +16,6 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.create(picture_params)
-    @picture.user_id = current_user.id
     @picture.gfy_url = @picture.gfy_convert(@picture.url)
     @picture.save
     redirect_to user_path(current_user)
